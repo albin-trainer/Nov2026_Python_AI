@@ -5,7 +5,7 @@ class Product:
         self.price=price
         self.ratings=ratings
 
-    def print(self):
+    def display(self):
         print(f"Id : {self.pid} Prod Name : {self.pname} Price : {self.price} Ratings :{self.ratings}")
 
 productList=[
@@ -17,14 +17,27 @@ productList=[
     Product(106,"Mobile",20000,4.8)
 ] 
 for p in productList :
-    p.print()
+    p.display()
+
 def selectPrice(e):
     return e.price
 
 productList.sort(key=selectPrice)
-print("-------sorted by price-------------------")
+print("-------sorted by price-----L to H")
 for p in productList :
-    p.print()
+    p.display()
+
+print("-----Sort by Ratings-----H to L")
+def selectRatings(e):
+    return e.ratings
+productList.sort(key=selectRatings, reverse=True)
+for p in productList :
+    p.display()
 
 
+productList.sort(key=lambda p:p.ratings)
+print("-----Sort by Ratings-----L to H")
+
+for p in productList :
+    p.display()
 

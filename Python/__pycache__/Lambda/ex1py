@@ -1,0 +1,13 @@
+
+def publish(g,name): ##Assume this Function post the wishes in social media
+    g(name)
+
+def greet(n):
+    print("Hi "+n+" Have a Nice Day !!!!")
+
+publish(greet,"Sahithya")
+
+# def BirthdayGreetings(n):
+#     print("Hi "+n+" Wish u many many happy returns of the Day")
+
+publish(lambda n:  print("Hi "+n+" Wish u many many happy returns of the Day") ,"Charukesh")

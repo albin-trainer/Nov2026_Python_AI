@@ -12,7 +12,7 @@ def create_vector_store():
 
     vector_store = SimpleVectorStore(VECTOR_FILE)
 
-    if Path(VECTOR_FILE).exists():
+    if Path(VECTOR_FILE).exists(): # if the file already existed
 
         print("Loaded Vector Store File!")
 
@@ -26,8 +26,8 @@ def create_vector_store():
 
         chunks = split_text(
             document["content"],
-            chunk_size=50,
-            overlap=10
+            chunk_size=40,
+            overlap=5
         )
 
         vector_store.add(chunks)

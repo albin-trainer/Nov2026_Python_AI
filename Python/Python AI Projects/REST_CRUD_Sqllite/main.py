@@ -7,13 +7,13 @@ app = FastAPI()
 
 # 1. Database connection
 def get_db():
-    conn = sqlite3.connect("employees.db")
+    conn = sqlite3.connect("employees.db") #automatically creates a DB
     conn.row_factory = sqlite3.Row
     return conn
 
 
-# 2. Create table
 conn = get_db()
+# 2. Create table
 
 conn.execute("""
     CREATE TABLE IF NOT EXISTS employees (
@@ -29,7 +29,7 @@ conn.close()
 
 
 # 3. Pydantic model
-class Employee(BaseModel):
+class Employee(BaseModel): #Inheritance class Employee inherits BaseModel class
     name: str
     salary: float
     department: str

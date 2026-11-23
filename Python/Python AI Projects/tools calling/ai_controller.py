@@ -8,7 +8,8 @@ from tools import get_weather, book_flight
 
 load_dotenv(override=True)
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"),base_url=os.getenv("CG_ENTERPRISE_URL"))
+
 weather_tool = {
     "type": "function",
     "function": {

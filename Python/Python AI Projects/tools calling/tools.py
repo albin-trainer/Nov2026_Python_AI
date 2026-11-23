@@ -43,3 +43,13 @@ def book_flight(destination: str):
         "destination": destination,
         "message": f"Flight booked to {destination}"
     }
+
+def get_employee_details(emp_id: int):
+
+    employees = {
+        101: {"name": "A", "department": "IT", "salary": 80000},
+        102: {"name": "B", "department": "HR", "salary": 60000},
+        103: {"name": "C", "department": "Finance", "salary": 70000}
+    }
+
+    return employees.get(emp_id, {"error": "Employee not found"})
